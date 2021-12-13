@@ -6,25 +6,25 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/13 18:40:01 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2021/12/13 18:39:50 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= test
+NAME				= BraiiiiiiinnnzzzZ
 
-override PATH_S		:= srcs
+override PATH_S		:= .
 override PATH_I		:= .
 override PATH_O		:= .bin
 
 override VPATH		:= ${PATH_S}
 
-FILES				:= test.cpp Account.cpp
+FILES				:= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 SRC					:= ${addprefix ${PATH_S}/, ${FILES}} \
 
 OBJ					:= ${FILES:.cpp=.o}
 OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 
-HEADER				= Account.hpp
+HEADER				= Zombie.hpp
 INCS				= ${addprefix ${PATH_I}/, ${HEADER}}
 
 CC					:=	clang++

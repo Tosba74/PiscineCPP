@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/13 14:28:38 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2021/12/13 18:00:09 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,6 @@ fs:			${OBJS} ${INCS}
 		${CFFS} ${INC} ${OBJS} -o ${NAME}
 
 crea_b :
-		@echo ${SRC}
-		@echo ${OBJ}
-		@echo ${OBJS}
 		${shell mkdir -p ${PATH_O}}
 	
 clean:
