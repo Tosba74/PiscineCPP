@@ -6,11 +6,11 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/13 20:51:08 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2021/12/14 08:37:59 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= BraiiiiiiinnnzzzZ
+NAME				= Moar_brainz
 
 override PATH_S		:= .
 override PATH_I		:= .
@@ -18,7 +18,7 @@ override PATH_O		:= .bin
 
 override VPATH		:= .
 
-FILES				:= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+FILES				:= main.cpp Zombie.cpp ZombieHorde.cpp 
 
 OBJ					:= ${FILES:.cpp=.o}
 OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
