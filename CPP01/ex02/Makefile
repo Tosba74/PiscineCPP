@@ -5,49 +5,41 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/14 14:56:29 by bmangin          ###   ########lyon.fr    #
+#    Created: 2021/12/15 15:59:46 by bmangin           #+#    #+#              #
+#    Updated: 2021/12/15 18:38:56 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= phonebook
+NAME				= ThisIsBrain
 
-override PATH_S		:= srcs
-override PATH_I		:= includes
-override PATH_C		:= class
+override PATH_S		:= .
+override PATH_I		:= .
 override PATH_O		:= .bin
 
-override VPATH		:= ${PATH_O} ${PATH_S} ${PATH_S}/${PATH_C}
+override VPATH		:= .
 
-FILES				:= main.cpp
-CLASS				:= Contact.cpp Phonebook.cpp
-SCLASS				:= ${addprefix ${PATH_C}/, ${CLASS}}
-SRC					:= ${addprefix ${PATH_S}/, ${FILES}} \
-					${addprefix ${PATH_S}/, ${SCLASS}}
+FILES				:= main.cpp 
 
-OBJ					:= ${SRC:.cpp=.o}
+OBJ					:= ${FILES:.cpp=.o}
 OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 
-HEADER				= Contact.hpp Phonebook.hpp
-INCS				= ${addprefix ${PATH_I}/, ${HEADER}}
 
 CC					:=	clang++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address
-INC					:=	-I ${PATH_I}
 RM					:=	rm -rf
 
 all:		crea_b ${NAME}
 
-${PATH_O}/%.o:	%.cpp ${INCS}
-		${CCF} ${INC} -c $< -o $@
+${PATH_O}/%.o:	%.cpp ${HEADER}
+		${CCF} -c $< -o $@
 
-${NAME}:	${OBJS} ${INCS}
-		${CCF} ${INC} ${OBJS} -o $@
+${NAME}:	${OBJS}
+		${CCF} ${OBJS} -o $@
 
-fs:			${OBJS} ${INCS}
-		${CFFS} ${INC} ${OBJS} -o ${NAME}
+fs:			${OBJS}
+		${CFFS} ${OBJS} -o ${NAME}
 
 crea_b :
 		${shell mkdir -p ${PATH_O}}

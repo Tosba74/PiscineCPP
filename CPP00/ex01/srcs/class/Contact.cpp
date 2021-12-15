@@ -6,29 +6,20 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:06:51 by bmangin           #+#    #+#             */
-/*   Updated: 2021/12/10 12:24:56by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 15:00:05 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/Contact.hpp"
 
-Contact::Contact(void)
-{
-	std::cout << "Contact constructor called" << std::endl;
-	return ;
-}
+Contact::Contact(void){return ;}
 
-Contact::~Contact(void)
-{
-	std::cout << "Contact destructor called" << std::endl;
-	return ;
-}
+Contact::~Contact(void){return ;}
 
 void 		Contact::setFirstName(void)
 {
 	std::cout << "\e[36mEnter First name: \e[0m";
 	std::getline(std::cin, this->_FirstName);
-	std::cout << std::endl;
 	return ;
 }
 
@@ -36,7 +27,6 @@ void 		Contact::setLastName(void)
 {
 	std::cout << "\e[36mEnter Last name: \e[0m";
 	std::getline(std::cin, this->_LastName);
-	std::cout << std::endl;
 	return ;
 }
 
@@ -44,7 +34,6 @@ void 		Contact::setNickName(void)
 {
 	std::cout << "\e[36mEnter Nick name: \e[0m";
 	std::getline(std::cin, this->_NickName);
-	std::cout << std::endl;
 	return ;
 }
 
@@ -52,7 +41,6 @@ void 		Contact::setPhone(void)
 {
 	std::cout << "\e[36mEnter Phone number: \e[0m";
 	std::getline(std::cin, this->_Phone);
-	std::cout << std::endl;
 	return ;
 }
 
@@ -60,7 +48,6 @@ void 		Contact::setDarkestSecret(void)
 {
 	std::cout << "\e[36mEnter Darkest Secret: \e[0m";
 	std::getline(std::cin, this->_DarkestSecret);
-	std::cout << std::endl;
 	return ;
 }
 

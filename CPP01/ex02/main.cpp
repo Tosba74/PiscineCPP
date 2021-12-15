@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 18:09:31 by bmangin           #+#    #+#             */
-/*   Updated: 2021/12/15 15:49:19 by bmangin          ###   ########lyon.fr   */
+/*   Created: 2021/12/15 15:59:43 by bmangin           #+#    #+#             */
+/*   Updated: 2021/12/15 18:54:09 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int	main(void)
+int main(void)
 {
-	int		nb;
-	Zombie	*Horde;
-
-	nb = 8;
-	Horde = zombieHorde(nb, "Freeze");
-	for (int i = 0; i < nb; i++)
-		Horde[i].announce();
-	delete [] Horde;
-	return 0;
+	std::string buf = "Hello";
+	std::string* buf_ptr = &buf;
+	std::string& buf_ref = buf;
+	
+	std::cout << buf << *buf_ptr << buf_ref << std::endl;
+	std::cout << &buf << buf_ptr << &buf_ref << std::endl;
 }

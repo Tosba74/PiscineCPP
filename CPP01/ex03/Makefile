@@ -5,42 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/14 14:56:29 by bmangin          ###   ########lyon.fr    #
+#    Created: 2021/12/15 18:43:38 by bmangin           #+#    #+#              #
+#    Updated: 2021/12/15 18:47:24 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				= phonebook
+NAME				= Unnecessary_violence
 
-override PATH_S		:= srcs
-override PATH_I		:= includes
-override PATH_C		:= class
+override PATH_S		:= .
+override PATH_I		:= .
 override PATH_O		:= .bin
 
-override VPATH		:= ${PATH_O} ${PATH_S} ${PATH_S}/${PATH_C}
+override VPATH		:= .
 
-FILES				:= main.cpp
-CLASS				:= Contact.cpp Phonebook.cpp
-SCLASS				:= ${addprefix ${PATH_C}/, ${CLASS}}
-SRC					:= ${addprefix ${PATH_S}/, ${FILES}} \
-					${addprefix ${PATH_S}/, ${SCLASS}}
+FILES				:= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
-OBJ					:= ${SRC:.cpp=.o}
+OBJ					:= ${FILES:.cpp=.o}
 OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 
-HEADER				= Contact.hpp Phonebook.hpp
-INCS				= ${addprefix ${PATH_I}/, ${HEADER}}
+HEADER				= Weapon.hpp HumanA.hpp HumanB.hpp
 
 CC					:=	clang++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address
-INC					:=	-I ${PATH_I}
+INC					:=	-I${HEADER}
 RM					:=	rm -rf
 
 all:		crea_b ${NAME}
 
-${PATH_O}/%.o:	%.cpp ${INCS}
+${PATH_O}/%.o:	%.cpp ${HEADER}
 		${CCF} ${INC} -c $< -o $@
 
 ${NAME}:	${OBJS} ${INCS}
