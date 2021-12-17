@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 18:43:38 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/15 18:47:24 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2021/12/16 21:31:17 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ CC					:=	clang++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address
-INC					:=	-I${HEADER}
+INC					:=	-I${PATH_I}
 RM					:=	rm -rf
 
 all:		crea_b ${NAME}
