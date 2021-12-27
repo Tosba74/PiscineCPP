@@ -6,11 +6,11 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/17 08:22:46 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/17 09:07:13 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2021/12/24 11:32:30 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= replace
+NAME	:= sed
 
 FILE	:= main.cpp
 OBJ		:= ${FILE:.cpp=.o}
@@ -25,13 +25,12 @@ ${NAME}:	${FILE}
 	$(CCF) -o $@ $<
 	
 clean:
-	${RM} ${FILE:.cpp=.o}
+	${RM} ${OBJ}
 
 fclean:	clean
 	${RM} ${NAME}
 
 re : fclean all
-
 
 .PHONY: all clean fclean re
 	

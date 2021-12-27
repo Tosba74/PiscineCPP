@@ -6,43 +6,16 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 08:25:12 by bmangin           #+#    #+#             */
-/*   Updated: 2021/12/17 20:06:49 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 18:43:54 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <fstream>
+#include <stdlib.h>
+#include <dirent.h>
 
-# include <stdlib.h>
-# include <dirent.h>
-
-/*
-std::stringstream strStream;
-	strStream << file.rdbuf();
-	file.close();
-	std::string str = strStream.str();
-	size_t	place = 0;
-	while ((place = str.find(s1, place)) != std::string::npos)
-	{
-		str.erase(place, s1.length());
-		str.insert(place, s2);
-		place += s2.length();
-	}
-	std::string	app = ".replace";
-	filename += app;
-	std::ofstream replaced;
-	replaced.open(filename.c_str());
-	if (!replaced.is_open())
-	{
-		std::cout << "Can't create the new file" << std::endl;
-		exit(-1);
-	}
-	replaced << str;
-	replaced.close();
-	exit(0);
-*/
 void	check_secu(std::string filename, std::string s1, std::string s2)
 {
 	DIR				*dir = opendir(filename.c_str());
@@ -64,10 +37,12 @@ void	check_secu(std::string filename, std::string s1, std::string s2)
 		exit(-1);
 	}
 }
-int		replace(std::string filename, std::string s1, std::string s2)
+int		sed(std::string filename, std::string s1, std::string s2)
 {
-	std::ifstream	ifs;
-	std::string str;
+	unsigned long	index;
+	std::string			str, tmp, line;
+	std::ifstream		ifs;
+	std::ofstream		ofs;
 
 	check_secu(filename, s1, s2);
 	ifs.open(filename.c_str());
@@ -76,20 +51,34 @@ int		replace(std::string filename, std::string s1, std::string s2)
 		std::cout << "Can't open the file" << std::endl;
 		return (1);
 	}
-	std::stringstream	strStream;
-	strStream << ifs.rdbuf();
+	ofs.open((filename + ".replace").c_str());
+	if (!ofs.is_open())
+	{
+		std::cout << "Can't create the new file" << std::endl;
+		return (1);
+	}
+	while (getline(ifs, str))
+	{	
+		index = 0;
+		while ((index = str.find(s1, index)) != std::string::npos)
+		{
+			str.erase(index, s1.length());
+			str.insert(index, s2);
+			index += s2.length();
+		}
+		ofs << str << std::endl;
+	}
 	ifs.close();
-	str = strStream.str();
-	whil
-	return(0);
+	ofs.close();
+	return (0);
 }
 
 int main(int ac, char **av)
 {
 	if (ac != 4)
 	{
-		std::cout << "Usage: ./replace <filename> <string#1> <string#2>" << std::endl;
+		std::cout << "Usage: ./sed <filename> <string#1> <string#2>" << std::endl;
 		return (1);
 	}
-	return (replace(av[1], av[2], av[3]));
+	return (sed(av[1], av[2], av[3]));
 }
