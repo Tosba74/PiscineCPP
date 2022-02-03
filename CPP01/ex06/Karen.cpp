@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 11:39:11 by bmangin           #+#    #+#             */
-/*   Updated: 2021/12/27 19:31:26 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/01/05 15:55:05 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	Karen::info(void)
 void	Karen::warning(void)
 {
     std::cout << "\e[32m[WARNING]\e[0m" << std::endl;
-    std::cout << "I think I deserve to have some extra bacon for free. << std::endl
-	std::coutI’ve been coming here for years and you just started working here last month." << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
+	std::cout << "I’ve been coming here for years and you just started working here last month." << std::endl;
 }
 
 void	Karen::error(void)

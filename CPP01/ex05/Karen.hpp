@@ -18,7 +18,6 @@
 class Karen
 {
 	private:
-		// typedef void	(Karen::*tpf[])(void);
 		void			debug(void);
 		void			info(void);
 		void			warning(void);

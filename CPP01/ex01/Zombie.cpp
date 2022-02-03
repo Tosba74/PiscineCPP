@@ -29,7 +29,10 @@ void	Zombie::announce(void)
 	return ;
 }
 
-void	Zombie::setname(std::string name){this->_name = name;}
+void	Zombie::setname(std::string name)
+{
+    this->_name = name;
+}
 
 Zombie*	newZombie(std::string name)
 {
@@ -46,3 +49,4 @@ void	randomChump(std::string name)
 	zozo.setname(name);
 	zozo.announce();
 }
+
