@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 19:52:22 by bmangin           #+#    #+#             */
-/*   Updated: 2022/02/03 00:27:07 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/03 18:27:17 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	convert(std::string nbr)
 	else
 		nb = atof(nbr.c_str());
 		
-	if ((nbr.length() > 1 && !std::isdigit(nbr[0])) || std::numeric_limits<int>::min() < nb || nb < std::numeric_limits<int>::max())
+	if ((nbr.length() > 1 && !std::isdigit(nbr[0])) || std::numeric_limits<int>::min() > nb || nb > std::numeric_limits<int>::max())
 	{
 		std::cout << "char: Impossible" << std::endl;
 		std::cout << "int: Impossible" << std::endl;	
