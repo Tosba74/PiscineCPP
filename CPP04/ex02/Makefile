@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 18:43:38 by bmangin           #+#    #+#              #
-#    Updated: 2022/01/21 23:50:07 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/17 23:54:00 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 HEADERS				= Aanimal.hpp Cat.hpp Dog.hpp Brain.hpp
 HEADER				= ${addprefix ${PATH_I}/, ${HEADERS}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

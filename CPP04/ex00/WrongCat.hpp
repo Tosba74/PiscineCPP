@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:21:26 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 21:44:19 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/16 14:24:01 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ class WrongCat : public WrongAnimal
 
 	public:
 		WrongCat(void);
+		WrongCat(std::string type);
 		WrongCat(WrongCat const& copy);
 		~WrongCat(void);
 		
 		void		makeSound(void) const;
-		WrongCat&		operator=(WrongCat const& rhs);
+		WrongCat&	operator=(WrongCat const& rhs);
 		
 };
 

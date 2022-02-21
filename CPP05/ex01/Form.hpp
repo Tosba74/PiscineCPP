@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 18:18:45 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/25 14:06:44 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/19 14:20:38 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ class Bureaucrat;
 
 class Form
 {
+	private:
+		std::string		_name;
+		bool 			_isSign;
+		unsigned int	_grade;
+		unsigned int	_gRequired;
+
 	public:
 		Form(std::string name, unsigned int grade, unsigned int rightOfExec);
 		Form(Form const& cpy);
@@ -43,11 +49,6 @@ class Form
 			virtual const char	*what() const throw();
 		};
 	
-	private:
-		std::string		_name;
-		bool 			_isSign;
-		unsigned int	_grade;
-		unsigned int	_gRequired;
 };
 
 std::ostream&	operator<<(std::ostream& ofs, Form const& inst);

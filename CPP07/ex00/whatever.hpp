@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:48:47 by bmangin           #+#    #+#             */
-/*   Updated: 2022/02/10 10:02:13 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/20 20:32:23 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,21 @@
 template<typename T>
 T	max(T &x, T &y)
 {
-	if (x < y)
-		return (y);
-	return (x);
+	return (x >= y ? x : y);
 }
 
 template<typename T>
 T	min(T &x, T &y)
 {
-	if (x > y)
-		return (y);
-	return (x);
+	return (x < y ? x : y);
 }
 
 template<typename T>
 void	swap(T &x, T &y)
 {
-	T	tmp = x;
+	T	tmp;
 
+	tmp = x;
 	x = y;
 	y = tmp;
 }

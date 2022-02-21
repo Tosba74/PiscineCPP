@@ -10,37 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Aanimal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
-
+#include "Cat.hpp"
 
 int main()
 {
-    Aanimal	*aanimal[20];
+    // Aanimal Animal = Aanimal();
+    Aanimal *Animal[20];
 
     for (size_t i = 0; i < 20; i++)
     {
         if(i % 2 == 0)
-            aanimal[i] = new Cat();
+            Animal[i] = new Cat();
         else
-            aanimal[i] = new Dog();
+            Animal[i] = new Dog();
     }
+	std::cout << "----------------------" << std::endl;
     for (size_t i = 0; i < 20; i++)
-        aanimal[i]->makeSound();
+        Animal[i]->makeSound();
+	std::cout << "----------------------" << std::endl;
     for (size_t i = 0; i < 20; i++)
-        delete aanimal[i];
-    std::cout << "---------------------" << std::endl << std::endl;
-    std::cout << "---------------------" << std::endl;
+        delete Animal[i];
 
-    Dog		rex;
-    Cat		pussy;
+    Dog rex;
 
-    rex.set_ideas(0,"WiizzZ!!!");
-    pussy.set_ideas(0,"Scratch!!!");
-    pussy.set_ideas(1,"BOoomM!!!");
-    std::cout << rex.get_idea(0) << std::endl;
-    std::cout << pussy.get_idea(0) << std::endl;
-    std::cout << pussy.get_idea(1) << std::endl;
+    rex.getBrain().setIdea(0, "Starting!!!");
+    rex.getBrain().setIdea(99, "Stop!!!");
+	std::cout << "----------------------" << std::endl;
+    std::cout << "\e[32m" << rex.getBrain() << "\e[0m" << std::endl;
+
+    Cat pussy;
+
+    pussy.getBrain().setIdea(0, "Scratch!!!");
+	std::cout << "----------------------" << std::endl;
+    std::cout << "\e[32m" << pussy.getBrain().getIdea(0) << "\e[0m" << std::endl;
 	return 0;
 }

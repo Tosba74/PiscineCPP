@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
-
+#include "Cat.hpp"
 
 int main()
 {
-     Animal	*animal[20];
+     Animal *animal[20];
 
     for (size_t i = 0; i < 20; i++)
     {
@@ -30,17 +28,19 @@ int main()
         animal[i]->makeSound();
     for (size_t i = 0; i < 20; i++)
         delete animal[i];
-    std::cout << "---------------------" << std::endl << std::endl;
-    std::cout << "---------------------" << std::endl;
 
-    Dog		rex;
-    Cat		pussy;
+    Dog rex;
 
-    rex.set_ideas(0,"WiizzZ!!!");
-    pussy.set_ideas(0,"Scratch!!!");
-    pussy.set_ideas(1,"BOoomM!!!");
-    std::cout << rex.get_idea(0) << std::endl;
-    std::cout << pussy.get_idea(0) << std::endl;
-    std::cout << pussy.get_idea(1) << std::endl;
+    rex.getBrain().setIdea(0, "Starting!!!");
+    rex.getBrain().setIdea(99, "Stop!!!");
+    std::cout << "\e[32m" << rex.getBrain() << "\e[0m" << std::endl;
+
+    Dog tmp = rex;
+    std::cout << "\e[32m" << tmp.getBrain() << "\e[0m" << std::endl;
+
+    Cat pussy;
+
+    pussy.getBrain().setIdea(0, "Scratch!!!");
+    std::cout << "\e[32m" << pussy.getBrain().getIdea(0) << "\e[0m" << std::endl;
 	return 0;
 }

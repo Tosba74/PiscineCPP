@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 18:43:38 by bmangin           #+#    #+#              #
-#    Updated: 2022/01/12 23:12:35 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/14 22:48:51 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 HEADERS				= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 HEADER				= ${addprefix ${PATH_I}/, ${HEADERS}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:21:26 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 18:58:06 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 15:44:11 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Cat : public Animal
 
 	public:
 		Cat(void);
+		Cat(std::string type);
 		Cat(Cat const& copy);
 		~Cat(void);
 		

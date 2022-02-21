@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:49:29 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 18:58:03 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 15:44:22 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Dog : public Animal
 
 	public:
 		Dog(void);
+		Dog(std::string type);
 		Dog(Dog const& copy);
 		~Dog(void);
 		

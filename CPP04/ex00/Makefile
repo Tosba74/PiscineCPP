@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/15 18:43:38 by bmangin           #+#    #+#              #
-#    Updated: 2022/01/16 20:26:14 by bmangin          ###   ########lyon.fr    #
+#    Created: 2022/02/07 19:47:10 by bmangin           #+#    #+#              #
+#    Updated: 2022/02/18 00:16:19 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 HEADERS				= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 HEADER				= ${addprefix ${PATH_I}/, ${HEADERS}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

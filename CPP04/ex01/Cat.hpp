@@ -6,33 +6,30 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:21:26 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/21 18:38:53 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/16 18:45:05 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
-		Brain	*_brain;
-	
+		Brain		*_brain;
+
 	protected:
 
 	public:
 		Cat(void);
+		Cat(std::string type);
 		Cat(Cat const& copy);
 		~Cat(void);
 		
 		void		makeSound(void) const;
-		void		set_ideas(int index, std::string idea);
-		std::string	get_idea(int index) const;
-		void		get_ideas(void) const;
 		Cat&		operator=(Cat const& rhs);
-		
+		Brain&		getBrain(void) const;
 };
 
 std::ostream&		operator<<(std::ostream& ofs, Cat const& rhs);

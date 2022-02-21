@@ -6,20 +6,25 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:23:58 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 21:48:29 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/16 00:05:21 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	this->type = "WrongCat";
 	std::cout << "Construtor Called" << std::endl;
 	return ;
 }
-WrongCat::WrongCat(WrongCat const& copy) : WrongAnimal(copy)
+WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 {
+	std::cout << "Construtor Called" << std::endl;
+	return ;
+}
+WrongCat::WrongCat(WrongCat const& copy)
+{
+	*this = copy;
 	std::cout << "Copy " << this->getType() << " Construtor Called" << std::endl;
 	return ;
 }

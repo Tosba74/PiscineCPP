@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 22:01:03 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/21 18:09:46 by bmangin          ###   ########lyon.fr   */
+/*   Created: 2022/02/16 14:53:29 by bmangin           #+#    #+#             */
+/*   Updated: 2022/02/16 15:21:38by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,50 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain Contructor Called" << std::endl;
-	return ;	
+	std::cout << "Brain constructor called" << std::endl;
+	return ;
 }
-Brain::Brain(Brain const& rhs)
+Brain::Brain(std::string idea)
 {
-	*this = rhs;
-	std::cout << "Brain Contructor Copy Called" << std::endl;
-	return ;	
+	ideas[0] = idea;
+	std::cout << "Brain constructor<idea> called" << std::endl;
+	return ;
+}
+Brain::Brain(Brain const& copy)
+{
+	*this = copy;
+	std::cout << "Brain constructor<copy> called" << std::endl;
+	return ;
+
 }
 Brain::~Brain()
 {
-	std::cout << "Brain Destructor Called" << std::endl;
-	return ;	
+	std::cout << "Brain destructor called" << std::endl;
+	return ;
 }
 
-void		Brain::get_ideas(void) const
+Brain&		Brain::operator=(Brain const& rhs)
 {
-	for (int i = 0; i < 100; i++)
-		std::cout << this->get_idea(i) << std::endl;
+	if (this != &rhs)
+	{
+		for (unsigned int i = 0; i < 100; i++)
+			this->ideas[i] = rhs.getIdea(i);
+	}
+	return *this;
+
 }
-std::string	Brain::get_idea(int index) const
+std::string	Brain::getIdea(int index) const
 {
 	return this->ideas[index];
 }
-void		Brain::set_ideas(int index, std::string idea)
+void		Brain::setIdea(int index, std::string idea)
 {
 	this->ideas[index] = idea;
+}
+
+std::ostream&		operator<<(std::ostream& ofs, Brain const& inst)
+{
+	for (unsigned int i = 0; i < 100; i++)
+		ofs << " [" << i << "] " << inst.getIdea(i) << std::endl;
+	return ofs;
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 22:01:01 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/21 18:05:29 by bmangin          ###   ########lyon.fr   */
+/*   Created: 2022/02/16 14:53:35 by bmangin           #+#    #+#             */
+/*   Updated: 2022/02/16 16:13:22 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,20 @@
 class Brain
 {
 	private:
-		std::string	ideas[100];
 	
+	protected:
+		std::string	ideas[100];
+
 	public:
 		Brain();
-		Brain(Brain const& rhs);
+		Brain(std::string idea);
+		Brain(Brain const& copy);
 		~Brain();
 
-		std::string	get_idea(int index) const;
-		void		get_ideas(void) const;
-		void		set_ideas(int index, std::string idea);
-	
+		Brain&		operator=(Brain const& rhs);
+		std::string	getIdea(int index) const;
+		void		setIdea(int index, std::string idea);
 };
+
+std::ostream&		operator<<(std::ostream& ofs, Brain const& inst);
+		

@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 15:59:46 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/15 18:38:56 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/14 22:48:51 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ					:= ${FILES:.cpp=.o}
 OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

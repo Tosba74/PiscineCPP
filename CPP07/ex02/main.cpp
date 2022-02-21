@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:50:01 by bmangin           #+#    #+#             */
-/*   Updated: 2022/02/14 17:28:08 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/18 00:17:38 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int main(void)
         std::cerr << e.what() << std::endl;
     }
 	
-	// std::cout << numbers3->getSize() << std::endl;
 	return 0;
 }
 

@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/21 23:59:02 by bmangin           #+#    #+#              #
-#    Updated: 2022/01/30 12:00:32 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/14 22:48:51 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ HEADERS				= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
 					RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 HEADER				= ${addprefix ${PATH_I}/, ${HEADERS}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

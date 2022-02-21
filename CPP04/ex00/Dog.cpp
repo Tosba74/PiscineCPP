@@ -6,21 +6,26 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:50:16 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 18:58:32 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/16 00:20:13 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : Animal("Dog")
 {
-	this->type = "Dog";
-	std::cout << "Construtor Called" << std::endl;
+	std::cout << "Dog Construtor Called" << std::endl;
 	return ;
 }
-Dog::Dog(Dog const& copy) : Animal(copy)
+Dog::Dog(std::string type) : Animal(type)
 {
-	std::cout << "Copy " << this->getType() << " Construtor Called" << std::endl;
+	std::cout << "Dog Construtor<type> Called" << std::endl;
+	return ;
+}
+Dog::Dog(Dog const& copy)
+{
+	*this = copy;
+	std::cout << "Copy " << this->getType() << " Dog Construtor<copy> Called" << std::endl;
 	return ;
 }
 Dog::~Dog()

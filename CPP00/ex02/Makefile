@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/15 15:14:39 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/14 22:48:51 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ					:= ${FILES:.cpp=.o}
 HEADER				= Account.hpp
 INCS				= ${addprefix ${PATH_I}/, ${HEADER}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

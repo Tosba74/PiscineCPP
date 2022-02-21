@@ -6,7 +6,7 @@
 /*   By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:06:25 by bmangin           #+#    #+#             */
-/*   Updated: 2022/01/16 21:49:00 by bmangin          ###   ########lyon.fr   */
+/*   Updated: 2022/02/16 00:21:50 by bmangin          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ WrongAnimal::WrongAnimal()
 	this->type = "undefined";
 	std::cout << "WrongAnimal(" << this->type << ") Constructor called" << std::endl;
 }
+WrongAnimal::WrongAnimal(std::string type) : type(type)
+{
+	std::cout << "WrongAnimal(" << this->type << ") Constructor<type> called" << std::endl;
+}
 WrongAnimal::WrongAnimal(WrongAnimal const& copy)
 {
-	this->type = copy.getType();
-	std::cout << "WrongAnimal(" << this->getType() << ") Constructor called" << std::endl;
+	*this = copy;
+	std::cout << "WrongAnimal(" << this->getType() << ") Constructor<copy> called" << std::endl;
 }
 WrongAnimal::~WrongAnimal()
 {

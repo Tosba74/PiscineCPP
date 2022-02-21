@@ -6,7 +6,7 @@
 #    By: bmangin <bmangin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 16:43:42 by bmangin           #+#    #+#              #
-#    Updated: 2021/12/14 14:56:29 by bmangin          ###   ########lyon.fr    #
+#    Updated: 2022/02/14 22:48:51 by bmangin          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJS				:= ${addprefix ${PATH_O}/, ${notdir ${OBJ}}}
 HEADER				= Contact.hpp Phonebook.hpp
 INCS				= ${addprefix ${PATH_I}/, ${HEADER}}
 
-CC					:=	clang++
+CC					:=	c++
 FLAGS				:=	-Wall -Wextra -Werror -std=c++98
 CCF					:=	${CC} ${FLAGS}
 CCFS				:=	${CCF} -g3 -fsanitize=address

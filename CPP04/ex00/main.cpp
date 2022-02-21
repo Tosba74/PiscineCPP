@@ -27,19 +27,23 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-    const WrongAnimal* w_meta = new WrongAnimal();
-	const WrongAnimal* w_i = new WrongCat();
+	j->Animal::makeSound();
+	std::cout << "----------------------" << std::endl;
 
-	std::cout << w_i->getType() << " " << std::endl;
-	std::cout << w_meta->getType() << " " << std::endl;
-	w_i->makeSound(); //will output the cat sound!
-	w_meta->makeSound();
+    const WrongAnimal* Zanimal = new WrongAnimal();
+	const WrongAnimal* Zat = new WrongCat();
 
+	std::cout << Zanimal->getType() << " " << std::endl;
+	std::cout << Zat->getType() << " " << std::endl;
+	Zanimal->makeSound();
+	Zat->makeSound();
+
+	std::cout << "----------------------" << std::endl;
     delete meta;
 	delete j;
 	delete i;
-    delete w_meta;
-	delete w_i;
+    delete Zanimal;
+	delete Zat;
 
 	return 0;
 }
